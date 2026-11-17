@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Academic and professional portfolio of Shivakumar S. Malagihal, Assistant Professor at RV University.">
+  <title>Shivakumar S. Malagihal | Academic Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #202522;
+      --muted: #68716b;
+      --paper: #fbfaf7;
+      --white: #fff;
+      --line: #e7e5df;
+      --accent: #557461;
+      --accent-dark: #385545;
+      --soft: #f0f2ed;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+      --width: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); line-height: 1.7; }
+    a { color: inherit; }
+    .container { width: min(var(--width), calc(100% - 56px)); margin: 0 auto; }
+    .topbar { position: sticky; top: 0; z-index: 20; background: rgba(251,250,247,.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { font-weight: 700; letter-spacing: -.04em; text-decoration: none; font-size: 17px; white-space: nowrap; }
+    .brand span { color: var(--accent); }
+    .navlinks { display: flex; align-items: center; gap: 25px; }
+    .navlinks a { color: #535c55; font-size: 12px; text-decoration: none; font-weight: 600; letter-spacing: .035em; }
+    .navlinks a:hover, .text-link:hover { color: var(--accent); }
+    .menu-button { display: none; border: 1px solid var(--line); background: transparent; padding: 8px 12px; border-radius: 4px; font: inherit; }
+    .hero { padding: 94px 0 86px; border-bottom: 1px solid var(--line); }
+    .hero-grid { display: grid; grid-template-columns: 1.35fr .65fr; gap: 76px; align-items: center; }
+    .eyebrow, .section-kicker { color: var(--accent); font-size: 10px; letter-spacing: .19em; text-transform: uppercase; font-weight: 700; }
+    h1 { font: 600 clamp(43px, 5.5vw, 68px)/1.12 var(--serif); letter-spacing: -.045em; margin: 20px 0 22px; max-width: 720px; }
+    .hero-copy { max-width: 680px; color: #555e57; font-size: 16px; line-height: 1.9; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; margin-top: 30px; }
+    .primary-link { display: inline-block; padding: 11px 18px; background: var(--accent-dark); color: white; text-decoration: none; font-size: 12px; font-weight: 700; letter-spacing: .04em; border: 1px solid var(--accent-dark); }
+    .text-link { color: var(--accent-dark); font-size: 12px; font-weight: 700; text-decoration: none; border-bottom: 1px solid #aebbb0; padding-bottom: 3px; }
+    .portrait-wrap { justify-self: end; width: min(100%, 330px); }
+    .portrait { width: 100%; aspect-ratio: 4/5; object-fit: cover; display: block; background: #e9e9e2; filter: saturate(.88); }
+    .portrait-caption { color: var(--muted); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; margin-top: 12px; }
+    .section { padding: 78px 0; border-bottom: 1px solid var(--line); }
+    .section-head { display: grid; grid-template-columns: .38fr 1fr; gap: 50px; margin-bottom: 36px; }
+    .section-kicker { padding-top: 10px; }
+    h2 { font: 600 clamp(30px, 3.5vw, 43px)/1.2 var(--serif); letter-spacing: -.035em; margin: 0 0 18px; }
+    h3 { font: 600 22px/1.35 var(--serif); margin: 0 0 9px; }
+    p { margin: 0 0 16px; }
+    .lead { color: #4f5952; font-size: 16px; max-width: 780px; }
+    .body-copy { color: #59625b; max-width: 800px; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+    .factline { padding: 18px 0; border-top: 1px solid var(--line); }
+    .factline strong { display: block; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 5px; }
+    .factline span { color: var(--muted); font-size: 14px; }
+    .theme-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 28px; }
+    .theme { padding: 23px 0; border-top: 1px solid var(--line); }
+    .theme-number { color: var(--accent); font-size: 11px; letter-spacing: .12em; font-weight: 700; }
+    .theme h3 { margin: 8px 0; font-size: 20px; }
+    .theme p { color: var(--muted); font-size: 13px; margin: 0; }
+    .work-list { border-top: 1px solid var(--line); }
+    .work-item { display: grid; grid-template-columns: 115px 1fr; gap: 30px; padding: 23px 0; border-bottom: 1px solid var(--line); }
+    .work-year { color: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: .06em; }
+    .work-item h3 { font-size: 19px; }
+    .work-item p { color: var(--muted); font-size: 13px; margin: 4px 0 0; }
+    .tag { display: inline-block; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--accent-dark); background: var(--soft); padding: 4px 8px; margin-top: 9px; }
+    .publication { display: grid; grid-template-columns: 90px 1fr; gap: 28px; padding: 23px 0; border-top: 1px solid var(--line); }
+    .pub-type { color: var(--accent); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; padding-top: 5px; }
+    .publication h3 { font: 600 18px/1.45 var(--sans); letter-spacing: -.02em; }
+    .publication p { color: var(--muted); font-size: 13px; margin: 5px 0 0; }
+    .publication a { color: var(--accent-dark); font-size: 12px; font-weight: 700; text-decoration: none; }
+    .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; }
+    .simple-list { list-style: none; margin: 0; padding: 0; }
+    .simple-list li { padding: 12px 0; border-top: 1px solid var(--line); color: #586159; font-size: 14px; }
+    .simple-list strong { color: var(--ink); }
+    .callout { background: var(--soft); padding: 34px; margin-top: 34px; }
+    .callout p { color: #586159; margin: 0; }
+    .contact-band { padding: 76px 0; background: #25382d; color: #fff; }
+    .contact-band .section-kicker { color: #b9c9bc; }
+    .contact-band h2 { max-width: 650px; }
+    .contact-band p { color: #d0d8d1; max-width: 600px; }
+    .contact-links { display: flex; flex-wrap: wrap; gap: 22px; margin-top: 25px; }
+    .contact-links a { color: white; font-size: 12px; font-weight: 700; text-decoration: none; border-bottom: 1px solid #87998b; padding-bottom: 4px; }
+    footer { padding: 25px 0; color: var(--muted); font-size: 11px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; }
+    @media (max-width: 850px) {
+      .navlinks { gap: 13px; }
+      .navlinks a { font-size: 11px; }
+      .hero-grid { gap: 35px; }
+      .section-head { gap: 25px; }
+    }
+    @media (max-width: 680px) {
+      .container { width: min(100% - 36px, var(--width)); }
+      .nav { min-height: 66px; flex-wrap: wrap; }
+      .menu-button { display: block; }
+      .navlinks { display: none; width: 100%; padding: 0 0 16px; flex-wrap: wrap; }
+      .navlinks.open { display: flex; }
+      .hero { padding: 58px 0; }
+      .hero-grid, .about-grid, .columns { grid-template-columns: 1fr; }
+      .portrait-wrap { justify-self: start; width: min(75%, 280px); grid-row: 1; }
+      .section { padding: 56px 0; }
+      .section-head { grid-template-columns: 1fr; gap: 10px; margin-bottom: 25px; }
+      .theme-grid { grid-template-columns: 1fr; }
+      .work-item { grid-template-columns: 75px 1fr; gap: 16px; }
+      .publication { grid-template-columns: 1fr; gap: 5px; }
+      .columns { gap: 35px; }
+      .footer-inner { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#home">Shivakumar <span>S. Malagihal</span></a>
+      <button class="menu-button" aria-label="Toggle navigation" onclick="document.querySelector('.navlinks').classList.toggle('open')">Menu</button>
+      <nav class="navlinks" aria-label="Main navigation">
+        <a href="#about">ABOUT</a><a href="#research">RESEARCH</a><a href="#teaching">TEACHING</a>
+        <a href="#industry">INDUSTRY</a><a href="#recognition">RECOGNITION</a><a href="#education">EDUCATION</a>
+        <a href="CV.pdf">CV</a><a href="#contact">CONTACT</a>
+      </nav>
+    </div>
+  </div>
+
+  <main>
+    <header class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Strategy · Digital Platforms · Competitiveness</div>
+          <h1>Understanding how firms compete in a digital platform economy.</h1>
+          <p class="hero-copy">I am an Assistant Professor at the School of Economics and Business, RV University, Bengaluru. My research examines digital platforms, innovation capabilities and the international competitiveness of firms, with a particular focus on firms of Indian origin.</p>
+          <div class="hero-actions">
+            <a class="primary-link" href="#research">EXPLORE MY RESEARCH&nbsp; →</a>
+            <a class="text-link" href="CV.pdf">READ THE FULL CV ↗</a>
+          </div>
+        </div>
+        <div class="portrait-wrap">
+          <!-- Replace profile.jpeg with your final professional portrait. -->
+          <img class="portrait" src="profile.jpeg" alt="Portrait of Shivakumar S. Malagihal">
+          <div class="portrait-caption">Shivakumar S. Malagihal · Bengaluru, India</div>
+        </div>
+      </div>
+    </header>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">About</div>
+          <div>
+            <h2>An academic perspective shaped by technology and industry.</h2>
+            <p class="lead">My work sits at the intersection of strategic management, digital platforms and technology-enabled business transformation.</p>
+          </div>
+        </div>
+        <div class="about-grid">
+          <div class="body-copy">
+            <p>I am an Assistant Professor at the School of Economics and Business, RV University, Bengaluru. I completed my doctoral research at the Shailesh J. Mehta School of Management, Indian Institute of Technology Bombay, where my work examines the capabilities that enable firms of Indian origin to enhance or sustain their international competitiveness in the digital platform economy.</p>
+            <p>My research interests include digital platform competitiveness, innovation platforms, platform capabilities, technology and innovation management, and international strategy. I draw on a combination of academic research, professional experience in the technology and consulting sectors, and management education.</p>
+            <p>My academic engagements include a Visiting Fellowship at the University of Cambridge Judge Business School and participation in international research conferences.</p>
+          </div>
+          <div>
+            <div class="factline"><strong>Current appointment</strong><span>Assistant Professor, School of Economics and Business, RV University</span></div>
+            <div class="factline"><strong>Doctoral research</strong><span>Shailesh J. Mehta School of Management, IIT Bombay</span></div>
+            <div class="factline"><strong>Research focus</strong><span>Digital platforms, innovation capabilities and firm competitiveness</span></div>
+            <div class="factline"><strong>Academic engagement</strong><span>Visiting Fellow, University of Cambridge Judge Business School (2024)</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="research">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Research</div>
+          <div>
+            <h2>Researching the capabilities behind digital competitiveness.</h2>
+            <p class="lead">I study how firms build, organise and leverage capabilities to participate in and compete through digital platforms and innovation ecosystems.</p>
+          </div>
+        </div>
+        <div class="theme-grid">
+          <article class="theme"><div class="theme-number">01 / THEME</div><h3>Digital Platform Competitiveness</h3><p>How firms develop and sustain competitive positions in platform-based markets.</p></article>
+          <article class="theme"><div class="theme-number">02 / THEME</div><h3>Innovation Platform Capabilities</h3><p>Capabilities for platform integration, reconfiguration, governance and ecosystem development.</p></article>
+          <article class="theme"><div class="theme-number">03 / THEME</div><h3>International Competitiveness</h3><p>How firms from emerging economies compete and expand in international markets.</p></article>
+          <article class="theme"><div class="theme-number">04 / THEME</div><h3>Technology & Innovation Management</h3><p>Strategic management of technological change, innovation and organisational capabilities.</p></article>
+          <article class="theme"><div class="theme-number">05 / THEME</div><h3>Digital Transformation</h3><p>Technology-enabled changes in business models, activities and competitive strategies.</p></article>
+          <article class="theme"><div class="theme-number">06 / THEME</div><h3>Emerging Technologies in Business</h3><p>Managerial implications and business applications of AI and other emerging technologies.</p></article>
+        </div>
+        <div class="callout">
+          <div class="section-kicker">Doctoral research</div>
+          <h3>Digital Platform Competitiveness of Firms of Indian Origin: A Capability Perspective</h3>
+          <p>Research question: What capabilities can enable ICT firms of Indian origin to enhance or sustain their international competitiveness in the digital platform economy, particularly on innovation platforms?</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="publications">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Selected work</div>
+          <div><h2>Selected publications & research outputs.</h2><p class="lead">A selection of my published research and conference contributions.</p></div>
+        </div>
+        <article class="publication">
+          <div class="pub-type">Journal article</div>
+          <div><h3>Thinking Beyond Core Activities: Evidence from Telecom Service Providers Competing in the Digital Platform Economy.</h3><p><em>Technology Analysis & Strategic Management.</em></p><a href="https://www.tandfonline.com/doi/full/10.1080/09537325.2024.2441806" target="_blank" rel="noopener">VIEW PUBLICATION ↗</a></div>
+        </article>
+        <article class="publication">
+          <div class="pub-type">Journal article</div>
+          <div><h3>Strategic Options for Automobile OEMs of Indian Origin to Have Sustained Competitive Advantage: A Case of Tata Motors.</h3><p>Published journal article.</p><a href="https://link.springer.com/article/10.1007/s42943-021-00029-5" target="_blank" rel="noopener">VIEW PUBLICATION ↗</a></div>
+        </article>
+        <article class="publication">
+          <div class="pub-type">Conference</div>
+          <div><h3>Measuring Competitiveness of Select Firms in AI Segments: Exploring Softer Dimensions of Technology Management.</h3><p>Scopus-indexed conference proceeding.</p><a href="https://www.researchgate.net/publication/344580576_MEASURING_COMPETITIVENESS_OF_SELECT_FIRMS_IN_AI_SEGMENTS_EXPLORING_SOFTER_DIMENSIONS_OF_TECHNOLOGY_MANAGEMENT" target="_blank" rel="noopener">VIEW RESEARCH OUTPUT ↗</a></div>
+        </article>
+        <div style="padding-top:24px"><a class="text-link" href="https://scholar.google.com/citations?user=-p7_sBYAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">VIEW GOOGLE SCHOLAR PROFILE ↗</a></div>
+      </div>
+    </section>
+
+    <section class="section" id="teaching">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Teaching</div>
+          <div><h2>Connecting management concepts with real business contexts.</h2><p class="lead">My teaching spans strategic management, technology and innovation, competitiveness and emerging technologies in business.</p></div>
+        </div>
+        <div class="columns">
+          <div>
+            <h3>Current teaching</h3>
+            <ul class="simple-list">
+              <li><strong>Emerging Technologies in Business</strong><br>MBA, RV University</li>
+              <li><strong>Strategic Management</strong></li>
+              <li><strong>Technology and Innovation Management</strong></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Other teaching experience</h3>
+            <ul class="simple-list">
+              <li>Innovation Management — MBA elective, NMIMS School of Business Management</li>
+              <li>International Competitiveness</li>
+              <li>Competitiveness for Sustainable Enterprise</li>
+              <li>Project Planning and Analysis</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="industry">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Industry</div>
+          <div><h2>Professional experience across technology, consulting and business analysis.</h2><p class="lead">Prior to and alongside my academic career, I gained experience in technology and business-facing roles.</p></div>
+        </div>
+        <div class="work-list">
+          <article class="work-item"><div class="work-year">WIPRO</div><div><h3>Software Development & Implementation</h3><p>Experience in software development and implementation activities.</p></div></article>
+          <article class="work-item"><div class="work-year">VOLVO</div><div><h3>Competitor Analysis & Export Strategies</h3><p>Worked on competitor analysis and export strategy-related assignments.</p></div></article>
+          <article class="work-item"><div class="work-year">CAPGEMINI</div><div><h3>Business Analysis & Requirements</h3><p>Experience in requirements gathering and translating requirements into test cases.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="recognition">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Recognition</div>
+          <div><h2>Fellowships, workshops and academic engagements.</h2><p class="lead">Selected academic recognition and international engagement.</p></div>
+        </div>
+        <div class="work-list">
+          <article class="work-item"><div class="work-year">2026</div><div><h3>Doctoral Participant-Centered Learning Workshop</h3><p>Harvard Business School, Mumbai.</p><a class="text-link" href="HBS Certificate.jpeg">VIEW CERTIFICATE ↗</a></div></article>
+          <article class="work-item"><div class="work-year">2024</div><div><h3>Visiting Fellow</h3><p>University of Cambridge Judge Business School, United Kingdom · January–April 2024.</p></div></article>
+          <article class="work-item"><div class="work-year">2018</div><div><h3>UGC-NET</h3><p>Qualified for Assistant Professorship, India.</p></div></article>
+        </div>
+        <div style="margin-top:42px">
+          <h3>Selected conference presentations</h3>
+          <ul class="simple-list">
+            <li><strong>Digital Platform Ecosystems Conference 2026</strong> — University of Passau, Germany. Research on digital platform competitiveness and capability development among firms of Indian origin.</li>
+            <li><strong>India Strategy Conference 2025</strong> — Indian School of Business, Hyderabad. Paper: “Competing with Giants: Mechanisms Enabling Digital Platform-Based EMNEs in Developed Countries.”</li>
+            <li><strong>India Strategy Conference 2025</strong> — Poster: “Fostering Innovation Through Product-to-Platform Transition: An Exploratory Multiple Case Study of Enterprise Software Firms.”</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Education</div>
+          <div><h2>Academic background.</h2><p class="lead">My academic training and research experience are grounded in management and strategic analysis.</p></div>
+        </div>
+        <div class="work-list">
+          <article class="work-item"><div class="work-year">DOCTORAL</div><div><h3>PhD — Strategy and General Management</h3><p>Shailesh J. Mehta School of Management, Indian Institute of Technology Bombay.</p></div></article>
+          <!-- Add your MBA, undergraduate degree and years here after verifying exact details. -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="contact-band" id="contact">
+    <div class="container">
+      <div class="section-kicker">Contact</div>
+      <h2>Let's connect on strategy, technology and digital platforms.</h2>
+      <p>For research collaborations, academic discussions, teaching engagements and professional enquiries, please get in touch.</p>
+      <div class="contact-links">
+        <a href="mailto:shiva.iitbombay.phd@gmail.com">EMAIL ↗</a>
+        <a href="https://scholar.google.com/citations?user=-p7_sBYAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">GOOGLE SCHOLAR ↗</a>
+        <a href="https://orcid.org/0000-0002-5577-0040" target="_blank" rel="noopener">ORCID ↗</a>
+        <a href="https://www.researchgate.net/profile/Shivakumar-Malagihal?ev=hdr_xprf" target="_blank" rel="noopener">RESEARCHGATE ↗</a>
+        <a href="https://www.linkedin.com/in/shivakumar-s-m-a0714120" target="_blank" rel="noopener">LINKEDIN ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 Shivakumar S. Malagihal</span>
+      <span>Academic & Professional Portfolio · Bengaluru, India</span>
+    </div>
+  </footer>
+</body>
+</html>
